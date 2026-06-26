@@ -1,0 +1,31 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-start: #FDF8F0;
+  --bg-end: #F5E8CC;
+  --surface: #FAF0DC;
+  --card: #FFFCF5;
+  --primary: #7A4F2F;
+  --accent: #C98A3E;
+  --text: #2E1A0E;
+  --text-secondary: #6B4423;
+  --text-muted: #A08060;
+  --bubble-user: #C98A3E;
+  --bubble-user-text: #1A0E05;
+  --bubble-bot: #FDF0DC;
+  --bubble-bot-text: #2E1A0E;
+  --border: #E8D5B7;
+  --shadow: rgba(100, 60, 20, 0.12);
+}
+
+html,
+body {
+  min-height: 100vh;
+  font-family: var(--font-nunito, system-ui, sans-serif);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
