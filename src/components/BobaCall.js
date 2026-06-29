@@ -66,17 +66,24 @@ export default function BobaCall() {
     });
 
     vapi.on('error', async (err) => {
+      const msg =
+        (err?.message || err?.error?.message || (typeof err === 'string' ? err : null)) ?? '';
+
+      // Vapi fires this when the server ends the call normally — not a real error.
+      if (msg.toLowerCase().includes('ejection') || msg.toLowerCase().includes('meeting has ended')) {
+        setCallStatus('idle');
+        return;
+      }
+
       const micState = await getMicState();
       if (micState === 'denied') {
         setMicBlocked(true);
       } else {
-        const msg =
-          err?.message || err?.error?.message || (typeof err === 'string' ? err : null);
-        console.error('Vapi error:', msg ?? JSON.stringify(err));
+        console.error('Vapi error:', msg || JSON.stringify(err));
         const userMsg =
           msg === 'Failed to fetch'
             ? 'Could not reach Boba Bot — check your internet connection and Vapi credentials.'
-            : (msg ?? 'Something went wrong. Please try again.');
+            : (msg || 'Something went wrong. Please try again.');
         setError(userMsg);
       }
       setCallStatus('idle');
