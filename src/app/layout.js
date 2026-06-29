@@ -1,8 +1,8 @@
-import { Lora, Nunito } from 'next/font/google';
+import { Kurale, Laila } from 'next/font/google';
 import './globals.css';
 
-const lora = Lora({ subsets: ['latin'], variable: '--font-lora', display: 'swap' });
-const nunito = Nunito({ subsets: ['latin'], variable: '--font-nunito', display: 'swap' });
+const kurale = Kurale({ weight: '400', subsets: ['latin'], variable: '--font-kurale', display: 'swap' });
+const laila = Laila({ weight: ['400', '500', '600'], subsets: ['latin'], variable: '--font-laila', display: 'swap' });
 
 export const metadata = {
   title: 'Boba Order 🧋',
@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${lora.variable} ${nunito.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${kurale.variable} ${laila.variable}`} suppressHydrationWarning>
       <body>{children}</body>
     </html>
   );

@@ -191,10 +191,10 @@ export default function BobaCall() {
         {/* ── Mic blocked panel ── */}
         {micBlocked && !textMode && (
           <div className={styles.card}>
-            <div className={styles.decoRow}>
-              <span>✨</span>
-              <span>🌸</span>
-              <span>✨</span>
+            <div className={styles.decoRow} aria-hidden="true">
+              <LaceHeart />
+              <LaceHeart />
+              <LaceHeart />
             </div>
             <span className={styles.micBlockedIcon}>🎙️</span>
             <p className={styles.micBlockedTitle}>Microphone is blocked</p>
@@ -221,10 +221,10 @@ export default function BobaCall() {
         {/* ── Normal call card ── */}
         {!micBlocked && !textMode && (
           <div className={styles.card}>
-            <div className={styles.decoRow}>
-              <span>✨</span>
-              <span>🌸</span>
-              <span>✨</span>
+            <div className={styles.decoRow} aria-hidden="true">
+              <LaceHeart />
+              <LaceHeart />
+              <LaceHeart />
             </div>
             <p className={styles.statusText}>{statusText}</p>
             <button
@@ -244,10 +244,10 @@ export default function BobaCall() {
         {/* ── Text mode card ── */}
         {textMode && (
           <div className={styles.card}>
-            <div className={styles.decoRow}>
-              <span>✨</span>
-              <span>🌸</span>
-              <span>✨</span>
+            <div className={styles.decoRow} aria-hidden="true">
+              <LaceHeart />
+              <LaceHeart />
+              <LaceHeart />
             </div>
             <p className={styles.statusText}>Type your boba order</p>
             <form className={styles.textForm} onSubmit={submitText}>
@@ -301,6 +301,17 @@ function Spinner() {
       aria-hidden="true"
     >
       <path d="M12 2a10 10 0 0 1 10 10" />
+    </svg>
+  );
+}
+
+function LaceHeart() {
+  return (
+    <svg viewBox="0 0 12.4 11.5" width="18" height="18" aria-hidden="true">
+      <path
+        fill="#897052"
+        d="M9.4,0C8.4,0,7,1.2,6.2,2.2C5.4,1.2,4,0,3.1,0C1.5-0.1,0.1,1.1,0,2.7C0,2.8,0,3,0,3.1c0,2.9,5.3,7.5,6.2,7.5s6.2-4.5,6.2-7.5c0.1-1.6-1-3-2.6-3.1C9.7,0,9.5,0,9.4,0z"
+      />
     </svg>
   );
 }

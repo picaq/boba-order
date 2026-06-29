@@ -5,27 +5,34 @@
 }
 
 :root {
-  --bg-start: #FDF8F0;
-  --bg-end: #F5E8CC;
-  --surface: #FAF0DC;
-  --card: #FFFCF5;
-  --primary: #7A4F2F;
-  --accent: #C98A3E;
-  --text: #2E1A0E;
-  --text-secondary: #6B4423;
-  --text-muted: #A08060;
-  --bubble-user: #C98A3E;
-  --bubble-user-text: #1A0E05;
-  --bubble-bot: #FDF0DC;
-  --bubble-bot-text: #2E1A0E;
-  --border: #E8D5B7;
-  --shadow: rgba(100, 60, 20, 0.12);
+  /* Mandy's palette */
+  --dark: #5B4E3E;
+  --midtone: #897052;
+  --light: #fdfcf6;
+  --txt-clr: #999590;
+  --accent: #B5C7DD;
+  --accent-deep: #9bb9de;
+  --accent-light: #c3d9f5;
+
+  /* semantic tokens */
+  --surface: var(--light);
+  --card: var(--light);
+  --primary: var(--midtone);
+  --text: var(--dark);
+  --text-secondary: var(--midtone);
+  --text-muted: var(--txt-clr);
+  --bubble-user: var(--accent);
+  --bubble-user-text: var(--dark);
+  --bubble-bot: var(--light);
+  --bubble-bot-text: var(--dark);
+  --border: var(--txt-clr);
+  --shadow: rgba(153, 149, 144, 0.47);
 }
 
 html,
 body {
   min-height: 100vh;
-  font-family: var(--font-nunito, system-ui, sans-serif);
+  font-family: var(--font-laila, 'Laila', Georgia, serif);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
 }
